@@ -46,3 +46,17 @@ curl -X POST "https://api.apify.com/v2/acts/datakit~takealot-price-tracker/run-s
 Store page: https://apify.com/datakit/takealot-price-tracker  (free to try; you only pay Apify platform usage)
 
 Made by [datakit](https://github.com/datakit457). Part of the [datakit tools list](https://datakit457.github.io/).
+
+## FAQ
+**Why did my first run return everything?** The first run has no history, so every product is `new`. Later runs with the same State name return only changes.
+
+**How often should I run it?** Once or twice a day is enough; Takealot prices rarely move hourly.
+
+**Does it track one specific product?** Search by its exact title or model number; use *Max products per keyword* = 36 to keep the run small.
+
+**Is it free?** Platform usage only (a typical run costs a fraction of a cent of compute).
+
+## Notes
+- Uses Takealot's public search endpoint; no login, no personal data. Prices in ZAR; when a product has several sellers, the lowest price is used.
+- Use a different State name for each watchlist.
+- Not affiliated with Takealot.
